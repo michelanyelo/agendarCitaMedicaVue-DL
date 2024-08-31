@@ -1,4 +1,5 @@
 <template>
+    <h2 class="mt-5">Mi Formulario</h2>
     <form class="row g-3 w-50 mx-auto" @submit.prevent="registrarConsulta">
         <div class="col-12">
             <label for="inputPaciente" class="form-label"
@@ -39,6 +40,7 @@
 <script>
 export default {
     name: 'FormCita',
+    emits: ['submit-cita'],
     data() {
         return {
             nivelGravedad: ['Baja', 'Media', 'Alta'],

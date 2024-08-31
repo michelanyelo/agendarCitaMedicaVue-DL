@@ -1,20 +1,17 @@
 <template>
-    <h1>Mi Formulario</h1>
+    <!-- Formulario -->
     <FormCita @submit-cita="agregarConsulta" />
-    <h1>Mis Citas Medicas</h1>
-    <ul>
-        <li v-for="(cita, index) in citas" :key="index">
-            {{ cita.paciente }} - {{ cita.fecha }} - {{ cita.horario }} - {{ cita.gravedad }} - {{ cita.motivo }}
-        </li>
-    </ul>
+    <!-- Listado de Citas -->
+    <ListCita :listaCitas="citas" />
 </template>
 
 <script>
 import FormCita from './FormCita.vue'
+import ListCita from './ListCita.vue'
 
 export default {
     name: 'CitasMedicas',
-    components: { FormCita },
+    components: { FormCita, ListCita },
     data() {
         return {
             citas: []
