@@ -1,10 +1,10 @@
 <template>
-    <h2 class="mt-5">Mi Formulario</h2>
-    <form class="row g-3 w-50 mx-auto" @submit.prevent="registrarCita">
+
+    <h2 class="my-4">Mi Formulario</h2>
+    <form class="row g-3 w-75 mx-auto" @submit.prevent="registrarCita">
         <div class="col-12">
             <label for="inputPaciente" class="form-label"
-                :class="{ 'text-danger fw-bold': !cita.paciente.trim() }">Nombre completo del
-                paciente</label>
+                :class="{ 'text-danger fw-bold': !cita.paciente.trim() }">Nombre completo del paciente</label>
             <input type="text" class="form-control" id="inputPaciente" v-model="cita.paciente">
         </div>
         <div class="col-md-6">
@@ -21,7 +21,7 @@
             <label for="inputGravedad" class="form-label"
                 :class="{ 'text-danger fw-bold': cita.gravedad <= 0 }">Gravedad</label>
             <select id="inputGravedad" class="form-select" v-model="cita.gravedad">
-                <option value="" disabled>Elije una opción...</option>
+                <option value="" disabled>Elige una opción...</option>
                 <option v-for="(nivel, idx) in nivelGravedad" :key="idx" :value="idx + 1">{{ nivel }}</option>
             </select>
         </div>
@@ -32,7 +32,7 @@
                 v-model="cita.motivo"></textarea>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-success" :disabled="!isFormValid">Agregar cita</button>
+            <button type="submit" class="btn btn-success w-100" :disabled="!isFormValid">Agregar cita</button>
         </div>
     </form>
 </template>
@@ -79,4 +79,16 @@ export default {
     },
 };
 </script>
-<style scoped></style>
+
+<style scoped>
+h2 {
+    font-size: 1.75rem;
+    color: #343a40;
+}
+
+
+.form-label {
+    font-size: 0.875rem;
+    color: #495057;
+}
+</style>

@@ -1,8 +1,10 @@
 <template>
-    <!-- Formulario -->
-    <FormCita @submit-cita="agregarCita" />
-    <!-- Listado de Citas -->
-    <ListCita :listaCitas="citas" @eliminar-cita="eliminarCita" />
+    <div class="container py-5 px-5 rounded">
+        <!-- Formulario -->
+        <FormCita @submit-cita="agregarCita" />
+        <!-- Listado de Citas -->
+        <ListCita :listaCitas="citas" @eliminar-cita="eliminarCita" />
+    </div>
 </template>
 
 <script>
@@ -28,4 +30,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+</style>
