@@ -31,7 +31,9 @@ export default {
     emits: ['eliminar-cita'],
     methods: {
         enviarId(id) {
-            this.$emit('eliminar-cita', id)
+            if (confirm('¿Estás seguro de eliminar la cita médica?')) {
+                this.$emit('eliminar-cita', id)
+            }
         },
         getCardClass(gravedad) {
             switch (gravedad) {
